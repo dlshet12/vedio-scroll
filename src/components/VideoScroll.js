@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState  } from 'react';
 import car_vedio from '../assets/carVedio.mp4';
+import carImage from '../assets/carImage.jpg'
 
 const VideoScroll = () => {
   const videoRef = useRef(null);
@@ -44,6 +45,12 @@ const VideoScroll = () => {
   }, []);
 
   return (
+     <>
+    
+         {/* Parallax Image Section */}
+         <div className="parallax" style={{ backgroundImage: `url(${carImage})` }}>
+         {/* <h1>Welcome to the Drive</h1> */}
+       </div>
   <div style={{ display: 'flex', justifyContent: 'space-between', height: '100vh' }}>
       <div className="scrolling-text" style={{ flex: 1 }}>
         <p>{currentText}</p>
@@ -53,6 +60,7 @@ const VideoScroll = () => {
         <source type="video/mp4" media="(min-width:1024px)" src={car_vedio} />
       </video>
     </div>
+    </>
   );
 };
 
