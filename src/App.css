@@ -1,23 +1,33 @@
 #set-height {
   display: block;
-} 
+}
 
 #v0 {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 55%; 
 }
+
 p {
-  font-family: helvetica;
+  font-family: Helvetica, sans-serif;
   font-size: 24px;
+  color: rgb(250, 249, 249); 
 }
-.vedio-stage{
+
+.vedio-stage {
+  object-fit: contain;
   height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  position: fixed;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-family: 'Helvetica', sans-serif;
+  color: rgb(249, 246, 246);
+  width: 40%; 
 }
