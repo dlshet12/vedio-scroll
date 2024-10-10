@@ -59,7 +59,7 @@ const FeatureReveal = () => {
       scrollTrigger: {
         trigger: '.text-change-section',
         start: 'top top', 
-        end: '+=300%', 
+        end: '+=500%', 
         pin: true, 
         scrub: 1, 
         onUpdate: (self) => {
