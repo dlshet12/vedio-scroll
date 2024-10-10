@@ -2,7 +2,7 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import featureImage1 from '../assets/featureImage1.jpg'; // Add your images
+import featureImage1 from '../assets/featureImage1.jpg'; 
 import featureImage2 from '../assets/featureImage2.jpg';
 import featureImage3 from '../assets/featureImage3.jpg';
 
@@ -26,6 +26,14 @@ const features = [
   },
 ];
 
+const scrollTexts = [
+    "Seamless Driving Experience",
+    "Safety as a Priority",
+    "Indulge in Luxury",
+    "Next-level Performance",
+    "Innovation at its Core"
+  ];
+
 const FeatureReveal = () => {
   React.useEffect(() => {
     features.forEach((_, index) => {
@@ -45,9 +53,26 @@ const FeatureReveal = () => {
         }
       );
     });
+
+     // Pin the text section and animate text changes
+    gsap.to('.scroll-text', {
+      scrollTrigger: {
+        trigger: '.text-change-section',
+        start: 'top top', 
+        end: '+=300%', 
+        pin: true, 
+        scrub: 1, 
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const textIndex = Math.floor(progress * (scrollTexts.length - 1));
+          document.querySelector('.scroll-text').textContent = scrollTexts[textIndex];
+        },
+      },
+    });
   }, []);
 
   return (
+    <>
     <div className="feature-reveal-section">
       {features.map((feature, index) => (
         <div key={index} className={`feature-card feature-${index}`}>
@@ -59,6 +84,11 @@ const FeatureReveal = () => {
         </div>
       ))}
     </div>
+      {/* Text changing section */}
+      <div className="text-change-section">
+        <h2 className="scroll-text">{scrollTexts[0]}</h2>
+      </div>
+    </>
   );
 };
 

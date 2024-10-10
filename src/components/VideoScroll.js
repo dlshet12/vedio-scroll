@@ -10,11 +10,9 @@ const VideoScroll = () => {
 
 
   const texts = [
-    "Experience the thrill of the drive.",
-    "Smooth handling and superior control.",
-    "Feel the power of precision engineering.",
-    "Innovative technology at your fingertips.",
-    "Unleash the speed with every scroll."
+    // "Experience the thrill of the drive.",
+    // "Smooth handling and superior control.",
+
   ];
 
   useEffect(() => {

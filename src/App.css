@@ -83,3 +83,23 @@ p {
   font-size: 18px;
   color: #fefdfd;
 }
+
+/* Style for text change section */
+.text-change-section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-text {
+  position: fixed;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #fdfcfc;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
